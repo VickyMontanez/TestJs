@@ -1,14 +1,12 @@
 import { procesarEstudiantes } from "../../../version/v2/sextoEjercicio";
 
-const estudiante1 = { nombre: 'Juan', sexo: 'M', nota: [85, 90, 78] };
-const estudiante2 = { nombre: 'Maria', sexo: 'F', nota: [92, 88, 96] };
-const estudiante3 = { nombre: 'Pedro', sexo: 'M', nota: [89, 76, 85] };
+const nombres = ["Estudiante1", "Estudiante2", "Estudiante3"];
+const generos = ["M", "F", "M"];
+const notas = [85, 92, 78];
 
-describe("La función debe el nombre del estudiante con la nota más alta y más baja, además de la cantidad de hombre sy mujeres", () => {
+describe("La función debe el nombre del estudiante con la nota más alta y más baja, además de la cantidad de hombre y mujeres", () => {
     test("La función debe devolver el nombre del estudiante con la nota más alta", () => {
-        const app = procesarEstudiantes(estudiante1, estudiante2, estudiante3)
-        expect(app).toEqual({
-            bestStudent: "El con la nota más alta es Maria con 92",
-        })
+        const app = procesarEstudiantes(nombres, generos, notas)
+        expect(app).toBe(`El Estudiante con la nota más alta es Estudiante2 con 92; El Estudiante con la nota más baja es Estudiante3 con 78. La cantidad de hombres es 2 y de mujeres es 1`)
     })
 })
